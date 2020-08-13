@@ -1,6 +1,8 @@
 #ifndef __INPUT
 #define __INPUT
 
+#include <Carbon/Carbon.h>
+
 typedef struct{
 	float steering,throttle,brake,handbrake;
 	int reverse,kickdown;

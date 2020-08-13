@@ -1,10 +1,7 @@
 #ifndef __ROADS
 #define __ROADS
 
-#ifdef _WIN32
-#include <MacTypes.h>
-#endif
-
+#include <Carbon/Carbon.h>
 #include "vec2d.h"
 
 enum{

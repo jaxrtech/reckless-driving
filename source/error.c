@@ -1,9 +1,13 @@
 #include "initexit.h"
 #include "screen.h"
 
-#ifdef _WIN32
-#include <MacTypes.h>
-#endif // _WIN32
+#include <HIToolbox/Dialogs.h>
+
+#ifndef __APPLE__
+
+#define __option(VAR) 0
+
+#endif
 
 
 typedef struct
@@ -46,9 +50,14 @@ Str255  *FindRoutineName( unsigned long *codeAddress )
 
 inline void GetCallerName(Str255 callerName)
 {
+    Str255 *name = NULL;
+
+    #if TARGET_CPU_PPC
     tStackFrame     *frame = (tStackFrame*) GetCallersSP();
     unsigned long   *address = (unsigned long*)frame->fSaveLR;
     Str255          *name = FindRoutineName( address );
+    #endif
+
 	if(name)
 		BlockMoveData(*name,callerName,(*name)[0]+1);
 	else

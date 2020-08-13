@@ -1,9 +1,9 @@
 #ifndef __INTERFACE
 #define __INTERFACE
 
-#ifdef _WIN32
-#include <MacTypes.h>
-#endif // _WIN32
+#ifndef __APPLE__
+#include <QD/QD.h>
+#endif
 
 
 extern int gExit;

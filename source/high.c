@@ -1,13 +1,10 @@
 #ifdef __APPLE__
-#include <gl.h>
-#include <QuickTime.h>
 #include "lzrwHandleInterface.h"
-#elif defined(_WIN32)
-#include "windows_gl.h"
-#include <gl/gl.h>
-#include <MacTypes.h>
-#include <HIToolbox/Events.h>
 #endif
+
+#include <QuickTime/QuickTime.h>
+#include <gl.h>
+#include <HIToolbox/Events.h>
 
 #include "preferences.h"
 #include "interface.h"
@@ -85,7 +82,7 @@ extern int gOSX;
 	if(text[0]>15)
 	{
 		text[0]=15;
-		text[15]='É';
+		text[15]='ï¿½';
 	}
 	BlockMove(text,gPrefs.high[index].name,text[0]+1);
 	gPrefs.high[index].score=score;

@@ -1,9 +1,18 @@
 #define CALL_IN_SPOCKETS_BUT_NOT_IN_CARBON 1
 
+#ifdef __APPLE__
 #include <Appearance.h>
 #include <Sound.h>
 #include <DrawSprocket.h>
 #include <InputSprocket.h>
+#else
+
+#include <QD/QD.h>
+#include <DrawSprocket/DrawSprocket.h>
+#include <InputSprocket/InputSprocket.h>
+#define __option(NAME) 0
+
+#endif
 #include "input.h"
 #include "screen.h"
 #include "error.h"

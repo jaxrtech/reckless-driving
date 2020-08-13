@@ -1,6 +1,10 @@
 #ifndef __PACKS
 #define __PACKS
 
+#ifndef __APPLE__
+#include <MacTypes.h>
+#endif
+
 enum{
 	kPackObTy,
 	kPackSprt,

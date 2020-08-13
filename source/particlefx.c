@@ -3,8 +3,13 @@
 #include "objects.h"
 #include "preferences.h"
 #include "random.h"
+
+#ifdef __APPLE__
 #include <gl.h>
- 
+#else
+#include <GL/gl.h>
+#endif
+
 #define kMaxParticles	64
 #define kMaxPFX			64
 #define E 				2.71828182846

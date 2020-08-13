@@ -5,7 +5,7 @@
 
 
 /**> HEADER FILES <**/
-#ifdef __APPLE_CC__	// Include headers if using ProjectBuilder
+#if defined(__APPLE__) && defined(__APPLE_CC__)	// Include headers if using ProjectBuilder
     #include <unistd.h>
     #include <Carbon/Carbon.h>
     #include <OpenGL/gl.h>			// OpenGL
@@ -19,15 +19,12 @@
     #include <glu.h>
     #include <DrawSprocket.h>
     #include <agl.h>
-#elif _WIN32
-	#include "windows_gl.h"
-    #include <gl/gl.h>
-
-	// TODO: Remove later, just want to see symbols
-	#include <DrawSprocket/DrawSprocket.h>
-    #include <QD/Quickdraw.h>
-    #include <AGL/agl.h>
 #endif
+
+#include <gl.h>
+#include <QD/QD.h>
+#include <DrawSprocket/DrawSprocket.h>
+#include <AGL/agl.h>
 
 
 /**> CONSTANT DECLARATIONS <**/

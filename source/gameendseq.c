@@ -113,9 +113,11 @@ void GameEndSequence()
 
 #include "gameframe.h"
 
-#ifdef __APPLE__
+#ifndef __APPLE__
+#include <HIToolbox/HIToolbox.h>
+#else
 #include "lzrwHandleInterface.h"
-#endif // __APPLE__
+#endif
 
 #include "error.h"
 #include "screen.h"

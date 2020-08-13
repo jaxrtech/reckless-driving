@@ -1,12 +1,15 @@
+#include <HIToolbox/HIToolbox.h>
+#include <CarbonCore.h>
+
 #include "error.h"
-#include "InternetConfig.h"
 #include "screen.h"
 #include "interface.h"
 #include "preferences.h"
 #include "packs.h"
 #include "initexit.h"
-#include "ZonicKRM.h"
 #include <math.h>
+#include "ZonicKRM.h"
+
 #define kCreator 'Råç2'
 
 UInt32 gKey;

@@ -1,5 +1,5 @@
 #include <math.h>
-#include "gl_platform.h"
+#include "gl.h"
 #include "objects.h"
 #include "screen.h"
 #include "error.h"

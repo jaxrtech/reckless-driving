@@ -1,8 +1,4 @@
 #include <QDOffscreen.h>
-#undef CALL_NOT_IN_CARBON
-#define CALL_NOT_IN_CARBON 1
-#include <DrawSprocket.h>
-#undef CALL_NOT_IN_CARBON
 #include <math.h>
 #include "error.h"
 #include "screen.h"
@@ -11,6 +7,8 @@
 #include "AGL_DSp.h"
 
 #define kDecimalPrec 3
+
+#define __option(VAR) 0
 
 DSpContextReference gDrawContext;
 Ptr gBaseAddr;

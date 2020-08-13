@@ -1,10 +1,10 @@
 #ifndef __SCREEN
 #define __SCREEN
 
-#ifdef _WIN32
-#include <MacTypes.h>
+#ifndef __APPLE__
+#include <CoreFoundation/CFMachPort.h>
 #include <QD/QD.h>
-#endif // _WIN32
+#endif
 
 
 enum{

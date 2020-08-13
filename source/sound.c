@@ -1,5 +1,6 @@
-#include <sound.h>
+#include <CarbonSound/CarbonSound.h>
 #include <math.h>
+
 #include "vec2d.h"
 #include "objects.h"
 #include "error.h"

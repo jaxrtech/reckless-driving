@@ -1,6 +1,14 @@
 #define CALL_IN_SPOCKETS_BUT_NOT_IN_CARBON 1
 
+#ifdef __APPLE__
 #include <gl.h>
+#include "lzrwHandleInterface.h"
+#include <QuickTime.h>
+#else
+#include <QuickTime/QuickTime.h>
+#include <GL/gl.h>
+#endif
+
 #include "error.h"
 #include "screen.h"
 #include "input.h"
@@ -8,10 +16,8 @@
 #include "preferences.h"
 #include "high.h"
 #include "gamesounds.h"
-#include "lzrwHandleInterface.h"
 #include "register.h"
 #include <DrawSprocket.h>
-#include <QuickTime.h>
 
 enum{
 	kNoButton=-1,
@@ -85,8 +91,8 @@ void LoadPict(int id,int drawNames)
 			DrawString(gPrefs.name);
 		}
 		else{
-			Move(-StringWidth("\p¥¥¥ This Copy is not Registered! ¥¥¥"),0);
-			DrawString("\p¥¥¥ This Copy is not Registered! ¥¥¥");
+			Move(-StringWidth("\pï¿½ï¿½ï¿½ This Copy is not Registered! ï¿½ï¿½ï¿½"),0);
+			DrawString("\pï¿½ï¿½ï¿½ This Copy is not Registered! ï¿½ï¿½ï¿½");
 		}			
 		MoveTo(10,15);
 		if(gLevelResFile)
@@ -358,7 +364,7 @@ void InitInterface()
 {
 	if(!gInterfaceInited)
 	{
-		(Handle)gButtonList=GetResource('Recs',1000);
+		gButtonList = (Rect **) GetResource('Recs', 1000);
 		gButtonRgn=NewRgn();
 		gInterfaceInited=true;
 	}

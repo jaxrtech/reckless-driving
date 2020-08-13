@@ -1,3 +1,7 @@
+#ifndef __APPLE__
+#include <HIToolbox/Controls.h>
+#endif
+
 #include "error.h"
 #include "input.h"
 #include "preferences.h"

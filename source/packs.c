@@ -1,10 +1,12 @@
 #include <stdlib.h>
-#ifdef _WIN32
-#include <MacTypes.h>
-#endif // _WIN32
+
+#ifdef __APPLE__
+#include "lzrwHandleInterface.h"
+#endif
+
+#include <Carbon/Carbon.h>
 
 #include "packs.h"
-#include "lzrwHandleInterface.h"
 #include "register.h"
 #include "interface.h"
 
@@ -33,15 +35,15 @@ UInt32 CryptData(UInt32 *data,UInt32 len)
 	if(len)
 	{
 		*((UInt8*)data)^=gKey>>24;
-		check+=(*((UInt8*)data)++)<<24;
+		check+=((*((UInt8*)data))++)<<24;
 		if(len>1)
 		{
 			*((UInt8*)data)^=(gKey>>16)&0xff;
-			check+=(*((UInt8*)data)++)<<16;
+			check+=((*((UInt8*)data))++)<<16;
 			if(len>2)
 			{
 				*((UInt8*)data)^=(gKey>>8)&0xff;
-				check+=(*((UInt8*)data)++)<<8;
+				check+=((*((UInt8*)data))++)<<8;
 			}
 		}
 	}

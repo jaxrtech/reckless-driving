@@ -1,6 +1,6 @@
+#ifdef __APPLE__
 #include <timer.h>
-
-#ifndef __APPLE__
+#else
 #include <stdint.h>
 #endif // __APPLE__
 

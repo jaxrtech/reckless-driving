@@ -1,10 +1,7 @@
 #ifndef __OBJECTS
 #define __OBJECTS
 
-#ifdef _WIN32
-#include <MacTypes.h>
-#endif
-
+#include <Carbon/Carbon.h>
 #include "input.h"
 #include "roads.h"
 

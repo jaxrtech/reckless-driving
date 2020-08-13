@@ -8,7 +8,13 @@
 #include "screenfx.h"
 #include "screen.h"
 #include <DrawSprocket.h>
+
+#ifdef __APPLE__
 #include <gl.h>
+#else
+#include <GL/gl.h>
+#endif
+
 int HandleMouseDownPause(EventRecord *event)
 {
 	return true;

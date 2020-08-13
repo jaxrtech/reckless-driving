@@ -39,5 +39,36 @@ set (SOURCES
 )
 
 add_executable (reckless "main.c" ${SOURCES})
+add_dependencies(reckless OpenGL::OpenGL)
+
+target_link_libraries(reckless m)
+
+target_compile_options(reckless PRIVATE
+		-m32
+		-Wno-multichar
+		-Wno-builtin-declaration-mismatch
+		)
+
+target_compile_definitions(reckless PRIVATE
+		DARWIN
+		__MACH__
+		__APPLE_CC__
+		__i386__
+		__cmath__
+		TARGET_API_MAC_OSX
+		natural_t=uint32_t
+		integer_t=int32_t
+
+		# ignored
+		__OPENSCRIPTING__
+		__PRINT__
+		__NAVIGATIONSERVICES__
+		__COMMONPANELS__
+		__HTMLRENDERING__
+		__SPEECHRECOGNITION__
+		__SECURITYHI__
+		__HELP__
+		__IMAGECAPTURE__
+		)
 
 # TODO: Add tests and install targets if needed.
