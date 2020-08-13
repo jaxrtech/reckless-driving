@@ -5,7 +5,7 @@
  
      Version:    CarbonCore-317~6
  
-     Copyright:  © 1987-2001 by Apple Computer, Inc., all rights reserved.
+     Copyright:  ï¿½ 1987-2001 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -73,7 +73,7 @@ extern "C" {
 *    x86              double(64)                   double(64)                   *
 *                                                                               *
 ********************************************************************************/
-#if defined(__MWERKS__) && defined(__cmath__)
+#if defined(__cmath__)
 /* these types were already defined in MSL's math.h */
 #else
 #if TARGET_CPU_PPC
@@ -128,7 +128,7 @@ typedef double                          double_t;
 #endif      
 #endif  /* __MWERKS__ && __cmath__ */
 /* MSL already defines these */
-#if !defined(__MWERKS__) || !defined(__cmath__)
+#if !defined(__cmath__)
 /********************************************************************************
 *                                                                               *
 *                            Trigonometric functions                            *
@@ -1095,7 +1095,7 @@ extern double_t  __inf(void);
 *                                                                               *
 *                              Inquiry macros                                   *
 *                                                                               *
-*   fpclassify      Returns one of the FP_Å values.                             *
+*   fpclassify      Returns one of the FP_ï¿½ values.                             *
 *   isnormal        Non-zero if and only if the argument x is normalized.       *
 *   isfinite        Non-zero if and only if the argument x is finite.           *
 *   isnan           Non-zero if and only if the argument x is a NaN.            *

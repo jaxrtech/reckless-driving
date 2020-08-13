@@ -5,7 +5,7 @@
  
      Version:    HIToolbox-79.9~1
  
-     Copyright:  © 1985-2001 by Apple Computer, Inc., all rights reserved
+     Copyright:  ï¿½ 1985-2001 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -317,12 +317,12 @@ GetCaretTime(void);
     careful about bit numberings and/or use a KeyMapByteArray
     instead.
 */
-#if TARGET_API_MAC_OS8
+//#if TARGET_API_MAC_OS8
 
 typedef UInt32                          KeyMap[4];
-#else
-typedef BigEndianLong                   KeyMap[4];
-#endif  /* TARGET_API_MAC_OS8 */
+//#else
+//typedef BigEndianLong                   KeyMap[4];
+//#endif  /* TARGET_API_MAC_OS8 */
 
 typedef UInt8                           KeyMapByteArray[16];
 /*

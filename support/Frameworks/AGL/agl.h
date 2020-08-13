@@ -19,7 +19,10 @@
 #define _AGL_H
 
 #import <ApplicationServices/ApplicationServices.h>
+
+#ifdef __APPLE__
 #import <OpenGL/gl.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

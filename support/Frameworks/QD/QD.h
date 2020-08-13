@@ -5,7 +5,7 @@
  
      Version:    Quickdraw-64.6.15~3
  
-     Copyright:  © 1999-2001 by Apple Computer, Inc., all rights reserved.
+     Copyright:  ï¿½ 1999-2001 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -28,7 +28,7 @@
 #include <ColorSync/ColorSync.h>
 #endif
 
-#ifndef __ATS__
+#ifndef __ATS___WIN32
 #include <ATS/ATS.h>
 #endif
 
