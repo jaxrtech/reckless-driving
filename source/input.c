@@ -1,15 +1,13 @@
-#define CALL_IN_SPOCKETS_BUT_NOT_IN_CARBON 1
+#define CALL_IN_SPROCKETS_BUT_NOT_IN_CARBON 1
 
 #include <HIToolbox/HIToolbox.h>
 
-#ifdef CALL_NOT_IN_CARBON
 #undef CALL_NOT_IN_CARBON
-#endif
-
 #define CALL_NOT_IN_CARBON 1
-#include <IOKit/adb/IOADBLib.h>
+#define REGISTER_UPP_TYPE(name) UniversalProcPtr
 #include <InputSprocket/InputSprocket.h>
 #undef CALL_NOT_IN_CARBON
+#define CALL_NOT_IN_CARBON 0
 
 #include <DriverServices.h>
 #include <math.h>

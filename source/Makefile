@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/joshua/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.6397.106/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /home/joshua/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.6397.106/bin/cmake/linux/bin/cmake -E rm -f
+RM = /usr/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/joshua/repos/reckless
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/joshua/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.6397.106/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,8 +89,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -766,33 +766,6 @@ renderframe.c.s:
 	cd /home/joshua/repos/reckless && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/reckless.dir/build.make source/CMakeFiles/reckless.dir/renderframe.c.s
 .PHONY : renderframe.c.s
 
-renderframezoom.o: renderframezoom.c.o
-
-.PHONY : renderframezoom.o
-
-# target to build an object file
-renderframezoom.c.o:
-	cd /home/joshua/repos/reckless && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/reckless.dir/build.make source/CMakeFiles/reckless.dir/renderframezoom.c.o
-.PHONY : renderframezoom.c.o
-
-renderframezoom.i: renderframezoom.c.i
-
-.PHONY : renderframezoom.i
-
-# target to preprocess a source file
-renderframezoom.c.i:
-	cd /home/joshua/repos/reckless && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/reckless.dir/build.make source/CMakeFiles/reckless.dir/renderframezoom.c.i
-.PHONY : renderframezoom.c.i
-
-renderframezoom.s: renderframezoom.c.s
-
-.PHONY : renderframezoom.s
-
-# target to generate assembly for a file
-renderframezoom.c.s:
-	cd /home/joshua/repos/reckless && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/reckless.dir/build.make source/CMakeFiles/reckless.dir/renderframezoom.c.s
-.PHONY : renderframezoom.c.s
-
 rle.o: rle.c.o
 
 .PHONY : rle.o
@@ -1060,9 +1033,6 @@ help:
 	@echo "... renderframe.o"
 	@echo "... renderframe.i"
 	@echo "... renderframe.s"
-	@echo "... renderframezoom.o"
-	@echo "... renderframezoom.i"
-	@echo "... renderframezoom.s"
 	@echo "... rle.o"
 	@echo "... rle.i"
 	@echo "... rle.s"

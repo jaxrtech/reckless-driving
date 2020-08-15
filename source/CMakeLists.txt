@@ -28,7 +28,7 @@ set (SOURCES
 	random.c
 	register.c
 	renderframe.c
-	renderframezoom.c
+#	renderframezoom.c  # looks like deadcode -- implemented in `renderfame.c`
 	rle.c
 	roaddraw.c
 	screen.c
@@ -41,16 +41,21 @@ set (SOURCES
 add_executable (reckless "main.c" ${SOURCES})
 add_dependencies(reckless OpenGL::OpenGL)
 
-target_link_libraries(reckless m)
+target_link_libraries(reckless
+		m
+#		-m32
+		OpenGL::OpenGL)
 
 target_compile_options(reckless PRIVATE
-		-m32
+#		-m32
 		-Wno-multichar
 		-Wno-builtin-declaration-mismatch
 		)
 
 target_compile_definitions(reckless PRIVATE
+		PRAGMA_ONCE
 		DARWIN
+		__LITTLE_ENDIAN__
 		__MACH__
 		__APPLE_CC__
 		__i386__
