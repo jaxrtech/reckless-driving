@@ -1,5 +1,6 @@
 #include <math.h>
 #include <gl.h>
+
 #include "objects.h"
 #include "screen.h"
 #include "sprites.h"

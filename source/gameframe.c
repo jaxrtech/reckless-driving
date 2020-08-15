@@ -4,6 +4,7 @@
 #include <stdint.h>
 #endif // __APPLE__
 
+#include "vec2d.h"
 #include "objects.h"
 #include "renderframe.h"
 #include "screen.h"

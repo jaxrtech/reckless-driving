@@ -7,7 +7,7 @@
 
 void HandleError(int id);
 
-inline void DoError(OSErr id)
+inline static void DoError(OSErr id)
 {
 	if(id) HandleError(id);
 }

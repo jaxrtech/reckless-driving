@@ -1,7 +1,9 @@
 .vs/
 .idea/
 .DS_Store
+*.cbp
 
 CMakeFiles/
 CMakeCache.txt
 *.cmake
+Makefile

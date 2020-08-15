@@ -5,7 +5,7 @@
 
 #define iS2F_MAX_ISHOCK2_NUM 1
 
-typedef struct {} iS2F_DeviceRef_t;
+typedef unsigned int iS2F_DeviceRef_t;
 
 typedef struct {
     float leftMotorMagnitude;
