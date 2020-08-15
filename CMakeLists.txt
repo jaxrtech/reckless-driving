@@ -34,7 +34,7 @@ set (SOURCES
         source/gameendseq.c
         source/gameframe.c
         source/gameinitexit.c
-        source/HIDAccess.c
+#        source/HIDAccess.c  # replaced with compat/HIDAccess.c
         source/high.c
         source/initexit.c
         source/input.c

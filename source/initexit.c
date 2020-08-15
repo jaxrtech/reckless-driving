@@ -87,25 +87,26 @@ int ReqCheck()
 
 void InitAE();
 
+/*
 static OSStatus LoadFrameworkBundle(CFBundleRef *bundlePtr)
 {
 	Boolean didLoad = false; //	Flag that indicates the status returned when attempting to load a bundle's executable code.
 	CFBundleRef refMainBundle = NULL;
 	CFURLRef refMainBundleURL = NULL, refPathBundleURL = NULL;
-		 
+
 	CFURLRef bundleURL = NULL;
 	CFBundleRef bundle = NULL;
 
 	//	See the Core Foundation URL Services chapter for details.
 	// get app bundle (even for a CFM app!)
-	refMainBundle = CFBundleGetMainBundle(); 
+	refMainBundle = CFBundleGetMainBundle();
 	if (!refMainBundle)
 	{
         DebugStr ("\pCould open main bundle");
 		return paramErr;
 	}
 	// create a URL to the app bundle
-	refMainBundleURL = CFBundleCopyBundleURL (refMainBundle); 
+	refMainBundleURL = CFBundleCopyBundleURL (refMainBundle);
 	if (!refMainBundleURL)
 	{
         DebugStr ("\pCould not copy main bundle URL");
@@ -113,11 +114,11 @@ static OSStatus LoadFrameworkBundle(CFBundleRef *bundlePtr)
 	}
 	// create a URL that points to the app's directory
 	// create a URL to the HID library bundle
-	bundleURL = CFURLCreateCopyAppendingPathComponent (NULL, refMainBundleURL, CFSTR("Contents/MacOS/FpuExceptions.bundle"), true); 
+	bundleURL = CFURLCreateCopyAppendingPathComponent (NULL, refMainBundleURL, CFSTR("Contents/MacOS/FpuExceptions.bundle"), true);
 	// release created URLs
-	if (refMainBundleURL != NULL) 
+	if (refMainBundleURL != NULL)
 		CFRelease (refMainBundleURL);
-	if (refPathBundleURL != NULL) 
+	if (refPathBundleURL != NULL)
 		CFRelease (refPathBundleURL);
 	// did we actaully get a bundle URL
 	if (!bundleURL)
@@ -143,18 +144,19 @@ static OSStatus LoadFrameworkBundle(CFBundleRef *bundlePtr)
 extern void PPC_EnableFloatingPointExceptions();
 typedef void (*fPtr)();
 
-//Call the Omni Group's floating-point exception enable function
-//used for debugging, this makes it easier to catch operations returning NaN results.
+Call the Omni Group's floating-point exception enable function
+used for debugging, this makes it easier to catch operations returning NaN results.
 void CallOmniEnableFloatExceptions()
 {
 	CFBundleRef 		bundle;
 	fPtr exceptPtr;
 	LoadFrameworkBundle(&bundle);
-	
+
 
 	exceptPtr = (fPtr) CFBundleGetFunctionPointerForName( bundle, CFSTR("PPC_EnableFloatingPointExceptions") );
 	exceptPtr();
 }
+*/
 
 void Init()
 {	//CallOmniEnableFloatExceptions();
