@@ -24,7 +24,7 @@ static OSErr g_memory_error = noErr;
  *  <br/>
  *  Do not rely on MemError as the only component of a memory-management
  *  scheme. For example, suppose you call NewHandle or NewPtr and receive the
- *  result codde noErr, indicating that the Memory Manager was able to allocate
+ *  result code noErr, indicating that the Memory Manager was able to allocate
  *  sufficient memory. In this case, you have no guarantee that the
  *  allocation did not deplete your application’s memory reserves to levels
  *  so low that simple operations might cause your application to crash.
@@ -73,6 +73,31 @@ NewPtr(Size byteCount)
     }
 
     return ptr;
+}
+
+/**
+ * Releases memory occupied by a nonrelocatable block.
+ *
+ * @param p
+ *   A pointer to the nonrelocatable block you want to dispose of.
+ *
+ * @remarks
+ * When you no longer need a nonrelocatable block, call the DisposePtr function
+ * to free it for other uses.
+ * <br/>
+ * Call the function MemError to get the result code. See “Memory Manager
+ * Result Codes”.
+ * <br/>
+ * After a call to DisposePtr, all pointers to the released block become
+ * invalid and should not be used again. Any subsequent use of a pointer to the
+ * released block might cause a system error. <br/> Because DisposePtr purges
+ * memory, you should not call it at interrupt time.
+ */
+void
+DisposePtr(Ptr p)
+{
+    if (p == NULL) { return; }
+    free(p);
 }
 
 /**

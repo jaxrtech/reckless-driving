@@ -25,6 +25,8 @@ set (SOURCES
         compat/iShockXForce.c
         compat/MacMemory.c
         compat/TextUtils.c
+        compat/NumberFormatting.c
+        compat/Sound.c
 
         # Game source
         source/main.c
