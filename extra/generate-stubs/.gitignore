@@ -1,0 +1,21 @@
+
+# Junk files
+.DS_Store
+
+# Packages
+node_modules
+
+# Editor & IDE settings
+.idea/
+.vscode/
+
+# Build & output files
+dist
+dist-ssr
+out/
+*.local
+*.log
+*.tsbuildinfo
+
+# User configuration
+.npmrc

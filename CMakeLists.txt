@@ -27,6 +27,7 @@ set (SOURCES
         compat/TextUtils.c
         compat/NumberFormatting.c
         compat/Sound.c
+        compat/DrawSprocket.c
 
         # Game source
         source/main.c

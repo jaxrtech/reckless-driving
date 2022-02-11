@@ -170,8 +170,8 @@ void Init()
 	LoadPrefs();
 	gPrefs.hiColor=true;
 	CheckRegi();
-	if(!gRegistered)
-		Register(false);
+//	if(!gRegistered)
+//		Register(false);
 	//InitScreen(0);
 	ScreenMode(kScreenRunning);
 //	InitGL();

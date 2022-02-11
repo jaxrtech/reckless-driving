@@ -2,7 +2,9 @@
 .idea/
 .DS_Store
 *.cbp
+*.log
 
+cmake-build-debug/
 CMakeFiles/
 CMakeCache.txt
 *.cmake
