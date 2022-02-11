@@ -3,7 +3,18 @@ import cheerio from 'cheerio';
 import fetch from 'cross-fetch';
 
 const groups = {
-  'window_manager': 'https://mirror.informatimago.com/next/developer.apple.com/documentation/Carbon/Reference/WindowManagerLegacy/wind_mgr_leg_ref/function_group_2.html',
+  'WindowManager': 'https://mirror.informatimago.com/next/developer.apple.com/documentation/Carbon/Reference/WindowManagerLegacy/wind_mgr_leg_ref/FunctionGroupIndex.html',
+  'ResourceManager': 'https://mirror.informatimago.com/next/developer.apple.com/documentation/Carbon/Reference/Resource_Manager/resourcemgr/FunctionGroupIndex.html',
+  'Quickdraw': 'https://mirror.informatimago.com/next/developer.apple.com/documentation/Carbon/Reference/QuickDraw_Ref/qdref_main/FunctionGroupIndex.html',
+  'QuickdrawText': 'https://mirror.informatimago.com/next/developer.apple.com/documentation/Carbon/Reference/QuickDraw_Text/qdtext_refchap/FunctionGroupIndex.html',
+  'DialogManager': 'https://mirror.informatimago.com/next/developer.apple.com/documentation/Carbon/Reference/Dialog_Manager/dialog_mgr_ref/FunctionGroupIndex.html',
+
+  // TODO: Older Pascal documentation
+  'EventManager': 'https://mirror.informatimago.com/next/developer.apple.com/documentation/mac/Toolbox/Toolbox-49.html',
+  'Files': [
+    'https://mirror.informatimago.com/next/developer.apple.com/documentation/mac/Files/Files-40.html',
+    'https://mirror.informatimago.com/next/developer.apple.com/documentation/mac/Files/Files-51.html',
+  ]
 };
 
 const program = new Command()
